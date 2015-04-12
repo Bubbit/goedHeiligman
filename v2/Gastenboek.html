@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="includes/angular.min.js"></script>
+    <script src="js/controlller.js"></script>
+</head>
+<body ng-controller="tasksController">
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '291811114344851',
+            xfbml      : true,
+            version    : 'v2.0'
+        });
+
+        FB.api('/ShitMichaelaSays/feed?limit=10',
+                {
+                    access_token: '291811114344851|vYP0zJnK3JbqhnwF7NmhF2OUMIs'
+                },
+            function(response) {
+                console.log(JSON.stringify(response));
+            }
+        );
+//
+//        FB.login(function(){
+//            FB.api('/me/accounts',
+//            function (response) {
+//                if (response && !response.error) {
+//                    console.log("awaww", response);
+//                }
+//            });
+//        }, {scope: 'manage_pages'});
+
+
+//        FB.login(function(){
+//            FB.api('/ShitMichaelaSays/feed',
+//                function (response) {
+//                    if (response && !response.error) {
+//                        console.log("awaww", response);
+//                    }
+//                    console.log("fail2");
+//                });
+//        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="goedheiligmanApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Roboto+Slab:300' rel='stylesheet' type='text/css'>
+    <link href="includes/style.css" rel="stylesheet" type="text/css">
+    <script src="includes/jquery-2.1.1.min.js"></script>
+    <script src="includes/angular.min.js"></script>
+    <script src="includes/angular-touch.min.js"></script>
+    <script src="js/remcoGlobal.js"></script>
+    <script src="js/viewportSize.js"></script>
+    <script src="js/docked.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/rImageViewer.js"></script>
+    <script src="js/goedheiligmanApp.js"></script>
+    <title>Home - Sinterklaas vereniging De Goedheiligman</title>
+</head>
+<body ng-controller="appCtrl">
+    <div class="nav-bar">
+        <nav>
+            <div class="logo"></div>
+            <div class="nav-toggle" ng-click="toggleMenu()"><i class="icon-menu"></i></div>
+            <ul ng-class="{showMenu: openMenu}">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="geschiedenis.html">Geschiedenis</a></li>
+                <li><span ng-click="loginService.loginToggle()">Login</span></li>
+            </ul>
+        </nav>
+    </div>
+    <header style="background-image: url('includes/images/Intocht1.jpg')">
+    </header>
+    <div class="bar"></div>
+    <div login></div>
+    <main>
+        <h1>Welkom op de website van Stichting de Goedheiligman!</h1>
+        <p>
+        Op deze website vind je alle informatie over de optredens van Sinterklaas en zijn pieten.  Klik hiervoor op de ‘knoppen’ boven de foto.
+        Kijk voor de precieze locaties, data en tijden in de agenda. Wij schudden je graag een handje, zingen een liedje of maken een dansje.
+        Voor foto’s en video’s kun je klikken op ‘media’. En vind je het leuk om je ervaring te delen, laat dan gerust een berichtje achter in het gastenboek.
+        Mocht je een vraag hebben die je niet terugvindt op de site, stuur dan een persoonlijk bericht via de knop ‘contact’.
+        Als je wilt dat Sinterklaas thuis of op het werk langskomt, laat het ons dan weten.
+        Stichting de Goedheiligman kijkt uit naar het komende Sinterklaasseizoen en heeft alle vertrouwen in een gezellige tijd met jong en oud!
+        </p>
+    </main>
+    <footer r-docked class="">
+        <div class="footer">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="http://www.guidedtours.nl" target="_blank">Guided Tours</a></li>
+                    <li><a href="http://www.dezottezwanen.nl" target="_blank">De Zotte Zwanen</a></li>
+                    <li><a href="http://www.http://sinterklaasmijnhobby.jouwweb.nl" target="_blank">Sinterklaas Hobby</a></li>
+                </ul>
+            </div>
+            <div class="footer-icons">
+                <ul>
+                    <li><a href="mailto:remco090@gmail.com"><i class="icon-mail-alt"></i></a></li>
+                    <li><a href="http://www.facebook.com" target="_blank"><i class="icon-facebook_alt"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

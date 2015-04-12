@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="goedheiligmanApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Roboto+Slab:300' rel='stylesheet' type='text/css'>
+    <link href="includes/style.css" rel="stylesheet" type="text/css">
+    <script src="includes/jquery-2.1.1.min.js"></script>
+    <script src="includes/angular.min.js"></script>
+    <script src="includes/angular-touch.min.js"></script>
+    <script src="js/remcoGlobal.js"></script>
+    <script src="js/viewportSize.js"></script>
+    <script src="js/rImageViewer.js"></script>
+    <script src="js/docked.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/goedheiligmanApp.js"></script>
+    <title>Home - Sinterklaas vereniging De Goedheiligman</title>
+</head>
+<body ng-controller="appCtrl">
+<div class="nav-bar">
+    <nav>
+        <div class="logo"></div>
+        <div class="nav-toggle" ng-click="toggleMenu()"><i class="icon-menu"></i></div>
+        <ul ng-class="{showMenu: openMenu}">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="geschiedenis.html">Geschiedenis</a></li>
+            <li><a href="gastenboek.html">Gastenboek</a></li>
+            <li><span ng-click="loginService.loginToggle()">Login</span></li>
+        </ul>
+    </nav>
+</div>
+<header style="background-image: url('includes/images/Intocht3.jpg')">
+</header>
+<div class="bar"></div>
+<div login></div>
+<main>
+    <h1>Geschiedenis van Stichting De Goedheiligman</h1>
+    <p>
+    De stichting is opgericht in 1997, maar de wortels liggen veel verder in
+    het verleden. Eind jaren 60 (van de vorige eeuw) werd de nieuwbouwwijk
+    Schalkwijk aan Haarlem gebouwd. Er was nog niet veel gezelligheid in de
+    jonge wijk en er werden hier en daar verenigingen opgericht. Sport-, muziek-
+    en cultuurverenigingen hadden alle ruimte om te groeien omdat dit in de
+    kinderschoenen stond. In 1967 werd een toneelvereniging opgericht.
+    Omdat Schalkwijk een kinderrijke wijk was, kwam al snel het idee om vanuit
+    de toneelvereniging Sinterklaas bezoeken aan de kinderen te brengen.
+    Dit groeide uit tot een groep die in het inmiddels gebouwde Winkelcentrum
+    van Schalkwijk een eigen Sinterklaas paleis kreeg en de kinderen daar
+    Sinterklaas op woensdagmiddag en zaterdag konden gaan bezoeken. Na verloop
+    van tijd was de animo vanuit de vereniging voor Sinterklaas afgenomen
+    en zijn de Sinterklaas activiteiten op een heel laag pitje komen te staan.
+    Maar nieuwe enthousiaste leden hebben na verloop van tijd de draad weer
+    opgepakt en de activiteiten werden steeds groter en er kwamen steeds meer
+    optredens. Er werd aan nieuwe kleding gewerkt voor de zwarte pieten en ook
+    wilden we Sinterklaas in een “echt” kostuum laten optreden. Met heel veel
+    vrijwilligers werd er aan het Sinterklaasfeest meegewerkt. Uiteindelijk
+    waren er nog maar een paar mensen vanuit de toneelvereniging echt actief met
+    de Sinterklaas met daarnaast een “klein legertje, buitenstaanders” zodat er
+    besloten werd de Sinterklaas activiteiten uit de toneelvereniging te halen.
+    En dat was dus in 1997. De toneelvereniging is kort daarna opgeheven omdat
+    er te weinig spelende leden waren. Sinterklaas en ondergetekende zijn nog steeds
+    heel blij dat we op tijd gekozen hebben om zelfstandig (buiten de
+    toneelvereniging) als Stichting De Goedheiligman verder te gaan.
+    Vanaf dat moment is de groep steeds professioneler gaan werken. Er kwamen
+    nieuwe Zwarte Pieten bij de groep maar ook andere vrijwilligers voor o.a.
+    schminken en kledingonderhoud hebben zich inmiddels bij de groep aangesloten.
+    Alle medewerkers doen mee op vrijwillige, maar niet vrijblijvende basis.
+    Hierdoor hebben wij dan ook de minimale leeftijd van 16 jaar voor deelname
+    ingesteld. Alleen tijdens de intocht voor City Haarlem komen er jongere
+    Zwarte Pieten mee, omdat wij dat samen met een andere groep organiseren.
+    </p>
+    <p>
+    Ook zijn er taken onder de Zwarte Pieten verdeeld. Zo hebben we een Piet
+    die zich bezig houdt met ons podium programma zodat er iedere keer weer
+    nieuws op het podium te beleven valt en heeft ons Zwarte Pietenorkest altijd
+    een leuk actueel liedje op het repertoire. Ieder jaar hebben we een nieuw kort
+    “toneelstukje” waarbij de kinderen worden betrokken. We zorgen er altijd voor dat de
+    Pieten er netjes en heel verzorgd uit zien en als het nodig is laten we nieuwe Pieten pakken
+    maken. Kortom als onze groep een optreden verzorgt is
+    het een echt kinderfeest.
+    </p>
+    <h2>De Hoofdpiet</h2>
+</main>
+<footer r-docked class="">
+    <div class="footer">
+        <div class="footer-links">
+            <ul>
+                <li><a href="http://www.guidedtours.nl" target="_blank">Guided Tours</a></li>
+                <li><a href="http://www.dezottezwanen.nl" target="_blank">De Zotte Zwanen</a></li>
+                <li><a href="http://www.http://sinterklaasmijnhobby.jouwweb.nl" target="_blank">Sinterklaas Hobby</a></li>
+            </ul>
+        </div>
+        <div class="footer-icons">
+            <ul>
+                <li><a href="mailto:remco090@gmail.com"><i class="icon-mail-alt"></i></a></li>
+                <li><a href="http://www.facebook.com" target="_blank"><i class="icon-facebook_alt"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

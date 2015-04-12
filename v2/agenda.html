@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="goedheiligmanApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Roboto+Slab:300' rel='stylesheet' type='text/css'>
+    <link href="includes/style.css" rel="stylesheet" type="text/css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="includes/jquery-2.1.1.min.js"></script>
+    <script src="includes/angular.min.js"></script>
+    <script src="includes/angular-touch.min.js"></script>
+    <script src="js/remcoGlobal.js"></script>
+    <script src="js/viewportSize.js"></script>
+    <script src="js/docked.js"></script>
+    <script src="js/rImageViewer.js"></script>
+    <script src="js/goedheiligmanApp.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/agenda.js"></script>
+    <title>Home - Sinterklaas vereniging De Goedheiligman</title>
+</head>
+<body ng-controller="appCtrl">
+<div class="nav-bar">
+    <nav>
+        <div class="logo"></div>
+        <div class="nav-toggle" ng-click="toggleMenu()"><i class="icon-menu"></i></div>
+        <ul ng-class="{showMenu: openMenu}">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="geschiedenis.html">Geschiedenis</a></li>
+            <li><a href="gastenboek.html">Gastenboek</a></li>
+            <li><span ng-click="loginService.loginToggle()">Login</span></li>
+        </ul>
+    </nav>
+</div>
+<header style="background-image: url('includes/images/Intocht2.jpg')">
+</header>
+<div class="bar"></div>
+<div login></div>
+<main>
+    <h1>Evenementen voor Sinterklaas 2014</h1>
+    <p agenda></p>
+</main>
+<footer r-docked class="">
+    <div class="footer">
+        <div class="footer-links">
+            <ul>
+                <li><a href="http://www.guidedtours.nl" target="_blank">Guided Tours</a></li>
+                <li><a href="http://www.dezottezwanen.nl" target="_blank">De Zotte Zwanen</a></li>
+                <li><a href="http://www.http://sinterklaasmijnhobby.jouwweb.nl" target="_blank">Sinterklaas Hobby</a></li>
+            </ul>
+        </div>
+        <div class="footer-icons">
+            <ul>
+                <li><a href="mailto:remco090@gmail.com"><i class="icon-mail-alt"></i></a></li>
+                <li><a href="http://www.facebook.com" target="_blank"><i class="icon-facebook_alt"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

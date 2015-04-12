@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html data-ng-app="facebookWallApp">
+
+<head>
+    <script src="includes/angular.min.js"></script>
+    <script src="includes/angular-facebook.js"></script>
+    <script>
+
+        angular.module('facebookWallApp', ['facebook'])
+
+                .config(function(FacebookProvider) {
+                    FacebookProvider.init('291811114344851');
+                })
+
+                .controller('mainCtrl', function ($scope, Facebook, $http) {
+
+                    $scope.loginStatus = 'disconnected';
+                    $scope.facebookIsReady = false;
+                    $scope.user = null;
+
+                    $scope.login = function () {
+                        Facebook.login(function(response) {
+                            $scope.loginStatus = response.status;
+                        });
+                    };
+
+                    $scope.getToken = function() {
+                        var data = [];
+                        data['app_id'] = '291811114344851';
+                        data['app_secret'] = '287139154ea47330370de9cc9c8f7fc0';
+
+                        $http.get('https://graph.facebook.com/oauth/access_token? client_id=' + data['app_id'] + '&client_secret=' + data['app_secret'] + '&grant_type=client_credentials').success(function (data) {
+                            return data.split('=')[1];
+                        });
+                    };
+
+                    $scope.removeAuth = function () {
+                        Facebook.api({
+                            method: 'Auth.revokeAuthorization'
+                        }, function(response) {
+                            Facebook.getLoginStatus(function(response) {
+                                $scope.loginStatus = response.status;
+                            });
+                        });
+                    };
+
+                    $scope.api = function () {
+                        Facebook.api('/me', function(response) {
+                            $scope.user = response;
+                        });
+                    };
+
+                    $scope.wall = function () {
+                        Facebook.api('/ShitMichaelaSays/feed',
+                            {
+                                access_token: $scope.getToken()
+                            },
+                            function(response) {
+                                $scope.wallFeed = response;
+                        });
+                    };
+
+                    $scope.$watch(function() {
+                            return Facebook.isReady();
+                        }, function(newVal) {
+                            if (newVal) {
+                                $scope.facebookIsReady = true;
+                            }
+                        }
+                    );
+                });
+
+    </script>
+    <script src="js/facebook.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+<button type="button" id="login" ng-click="login()">login</button>
+<button type="button" id="api" ng-click="api()">api user data call</button>
+<button type="button" id="remove_auth" ng-click="removeAuth()">remove auth</button>
+<button type="button" id="get_wall" ng-click="wall()">GetWall</button>
+<button type="button" id="get_token" ng-click="getToken()">GetToken</button>
+<pre>isReady: <span id="is_ready" ng-bind="facebookIsReady"></span></pre>
+<pre>status: <span id="login_status" ng-bind="loginStatus"></span></pre>
+<pre>username: <span id="api_first_name" ng-bind="user.first_name"></span></pre>
+<facebook-wall feed="wallFeed.data"></facebook-wall>
+{{access_token}}
+</body>
+
+</html>
